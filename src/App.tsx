@@ -3,7 +3,9 @@ import { ColorModeContext, useMode } from "./theme";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import Topbar from "./components/layout/Topbar";
-import Dashboard from "./pages/dashboard";
+import Sidebar from "./components/layout/Sidebar";
+import Dashboard from "./pages/Dashboard";
+import { ProSidebarProvider } from "react-pro-sidebar";
 // import Team from "./pages/team";
 // import Invoices from "./pages/invoices";
 // import Contacts from "./pages/contacts";
@@ -20,13 +22,15 @@ function App() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <div className="app">
-          <main className="content">
-            <Topbar />
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              {/* <Route path="/team" element={<Team />} />
+        <ProSidebarProvider>
+          <CssBaseline />
+          <div className="app">
+            <main className="content">
+              <Topbar />
+              <Sidebar />
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                {/* <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
               <Route path="/form" element={<Form />} />
@@ -36,9 +40,10 @@ function App() {
               <Route path="/faq" element={<FAQ />} />
               <Route path="/geography" element={<Geography />} />
               <Route path="/calendar" element={<Calendar />} /> */}
-            </Routes>
-          </main>
-        </div>
+              </Routes>
+            </main>
+          </div>
+        </ProSidebarProvider>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
