@@ -4,9 +4,9 @@ import { ThemeProvider, CssBaseline } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import Topbar from "./components/layout/Topbar";
 import Sidebar from "./components/layout/Sidebar";
-import Dashboard from "./pages/Dashboard";
 import { ProSidebarProvider } from "react-pro-sidebar";
-// import Team from "./pages/team";
+import Dashboard from "./pages/Dashboard";
+import Team from "./pages/Team";
 // import Invoices from "./pages/invoices";
 // import Contacts from "./pages/contacts";
 // import Bar from "./pages/bar";
@@ -30,8 +30,8 @@ function App() {
               <Topbar />
               <Routes>
                 <Route path="/" element={<Dashboard />} />
-                {/* <Route path="/team" element={<Team />} />
-              <Route path="/contacts" element={<Contacts />} />
+                <Route path="/team" element={<Team />} />
+                {/*<Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
               <Route path="/form" element={<Form />} />
               <Route path="/bar" element={<Bar />} />
