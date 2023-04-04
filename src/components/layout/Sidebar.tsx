@@ -4,10 +4,13 @@ import {
   Menu,
   MenuItem,
   useProSidebar,
+  sidebarClasses,
 } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import { tokens } from "../../theme";
+
+import UserImageSrc from "../../assets/user.png";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
@@ -63,30 +66,34 @@ const Sidebar = () => {
   const [selected, setSelected] = useState("Dashboard");
 
   return (
-    <Box
-      sx={{
-        "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
-        },
-        "& .pro-icon-wrapper": {
-          backgroundColor: "transparent !important",
-        },
-        "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
-        },
-        "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
-        },
-        "& .pro-menu-item.active": {
-          color: "#6870fa !important",
-        },
-      }}
-    >
-      <ProSidebar>
-        <Menu>
+    <Box>
+      <ProSidebar
+        transitionDuration={500}
+        style={{ height: "100vh", border: "none" }}
+        rootStyles={{
+          [`.${sidebarClasses.container}`]: {
+            backgroundColor: `${colors.primary[400]} !important`,
+          },
+        }}
+      >
+        <Menu
+          menuItemStyles={{
+            button: ({ level, active, disabled }) => {
+              return {
+                color: active ? "#6870fa !important" : undefined,
+                padding: "5px 35px 5px 20px !important",
+                transition: "color 0.3s ease !important",
+                "&:hover": {
+                  color: "#868dfb !important",
+                  backgroundColor: "transparent !important",
+                },
+              };
+            },
+          }}
+        >
           {/* LOGO AND MENU ICON */}
           <MenuItem
-            onClick={() => toggleSidebar()}
+            onClick={() => collapseSidebar()}
             icon={collapsed ? <MenuOutlinedIcon /> : undefined}
             style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
           >
@@ -100,7 +107,7 @@ const Sidebar = () => {
                 <Typography variant="h3" color={colors.grey[100]}>
                   ADMINIS
                 </Typography>
-                <IconButton onClick={() => toggleSidebar()}>
+                <IconButton>
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
@@ -115,7 +122,7 @@ const Sidebar = () => {
                   alt="user-profile"
                   width="100px"
                   height="100px"
-                  src="../../assets/user.png"
+                  src={UserImageSrc}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>

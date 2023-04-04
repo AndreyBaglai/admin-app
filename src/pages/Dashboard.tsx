@@ -5,7 +5,7 @@ import Header from "../components/Header";
 const Dashboard = () => {
   return (
     <Box m="20px">
-      <Box display="flex" justifyContent="center" alignItems="center">
+      <Box display="flex" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
       </Box>
     </Box>
