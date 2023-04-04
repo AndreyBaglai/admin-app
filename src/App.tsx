@@ -7,8 +7,8 @@ import Sidebar from "./components/layout/Sidebar";
 import { ProSidebarProvider } from "react-pro-sidebar";
 import Dashboard from "./pages/Dashboard";
 import Team from "./pages/Team";
-import Contacts from "pages/Contacts";
-// import Invoices from "./pages/invoices";
+import Contacts from "./pages/Contacts";
+import Invoices from "./pages/Invoices";
 // import Bar from "./pages/bar";
 // import Form from "./pages/form";
 // import Line from "./pages/line";
@@ -32,8 +32,8 @@ function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/contacts" element={<Contacts />} />
-                {/* <Route path="/invoices" element={<Invoices />} />
-              <Route path="/form" element={<Form />} />
+                <Route path="/invoices" element={<Invoices />} />
+                {/* <Route path="/form" element={<Form />} />
               <Route path="/bar" element={<Bar />} />
               <Route path="/pie" element={<Pie />} />
               <Route path="/line" element={<Line />} />
