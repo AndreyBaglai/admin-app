@@ -9,7 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import Team from "./pages/Team";
 import Contacts from "./pages/Contacts";
 import Invoices from "./pages/Invoices";
-// import Bar from "./pages/bar";
+import Bar from "./pages/Bar";
 import ProfileForm from "./pages/ProfileForm";
 // import Line from "./pages/line";
 // import Pie from "./pages/pie";
@@ -36,8 +36,8 @@ function App() {
                 <Route path="/profile-form" element={<ProfileForm />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/faq" element={<FAQ />} />
-                {/* <Route path="/bar" element={<Bar />} />
-              <Route path="/pie" element={<Pie />} />
+                <Route path="/bar" element={<Bar />} />
+                {/* <Route path="/pie" element={<Pie />} />
               <Route path="/line" element={<Line />} />
             
               <Route path="/geography" element={<Geography />} />
