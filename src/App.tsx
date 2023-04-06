@@ -14,7 +14,7 @@ import ProfileForm from "./pages/ProfileForm";
 import Line from "./pages/Line";
 import Pie from "./pages/Pie";
 import FAQ from "./pages/Faq";
-// import Geography from "./pages/geography";
+import Geography from "./pages/Geography";
 import Calendar from "./pages/Calendar";
 
 function App() {
@@ -40,9 +40,7 @@ function App() {
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/pie" element={<Pie />} />
                 <Route path="/line" element={<Line />} />
-
-                {/*<Route path="/geography" element={<Geography />} />
-                 */}
+                <Route path="/geography" element={<Geography />} />
               </Routes>
             </main>
           </div>
