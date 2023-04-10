@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { tokens } from "../theme";
 
 interface ProgressCircleProps {
@@ -23,9 +23,7 @@ const ProgressCircle: FC<ProgressCircleProps> = ({
         width: `${size}px`,
         height: `${size}px`,
       }}
-    >
-      ProgressCircle
-    </Box>
+    ></Box>
   );
 };
 
